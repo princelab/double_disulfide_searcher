@@ -1,3 +1,4 @@
+Cumulative # Distribution Function implemented here is from = distribution * https://github.com/clbustos/distribution== DESCRIPTION:Statistical Distributions library.
 #This program caculate the primary sequence score. 
 $LOAD_PATH << (File.dirname(__FILE__) + '/../lib')
 require "extract_data_and_bin.rb"

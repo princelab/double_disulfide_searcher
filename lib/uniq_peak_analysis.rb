@@ -1,3 +1,4 @@
+# Distribution Function implemented here is from = distribution * https://github.com/clbustos/distribution== DESCRIPTION:Statistical Distributions library.
 #This program caculate the pattern diagnostic score for all possible disulide patterns. 
 $LOAD_PATH << (File.dirname(__FILE__) + '/../lib')
 require 'rubygems'

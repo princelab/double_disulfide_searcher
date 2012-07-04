@@ -1,3 +1,4 @@
+#Cumulative Hypergeometric Distribution Function implemented here is from = distribution * https://github.com/clbustos/distribution== DESCRIPTION:Statistical Distributions library.
 #Call this file to start the analysis. You must input amino acide sequence with at least two cysteine and specify data file (.txt). The data file must list
 #the data like mz&intentsity mz$intensity... 
 $LOAD_PATH << (File.dirname(__FILE__) + '/../bin')
