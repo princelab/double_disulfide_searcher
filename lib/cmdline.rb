@@ -38,7 +38,7 @@ if $0 == __FILE__
    ARGV
   input = DisulfideSearcher::CMDline.run(ARGV)
 end
-#optimum level of data extraction is determined by caculating the common score up to Q= 70 by 2Q. 
+#optimum level of data extraction is determined by caculating the common score up to Q= 10
 if input[:optimizeQ] == true
 	array_of_q = (1..10).map do |i|
 	[interface(input[:sequence],input[:mass_tolerance],i,input[:single_disulfide_mode],input[:disulifde_pattern_analysis],input[:lower_mz_limit],input[:output_percent_coverage],input[:run_file]),i]
