@@ -7,7 +7,7 @@ require "command"
 require "tools"
 module DisulfideSearcher
   CMDLineDefaults = "--sequence FCGLCVCPCNK --run-file somefile.txt".split(/ /)
-  RunDefaults = {:sequence=>"AASCFCADFSCFCA", :run_file=>"C:/Ruby192/formatteddata.txt", :output_file=>nil,:mass_tolerance=>0.3, :Qvalue=>15, :single_disulfide_mode=>false,:disulifde_pattern_analysis=>true,:lower_mz_limit=>200, :output_percent_coverage=>false, :optimizeQ=>false, :help=>false, :sequence_given=>true, :run_file_given=>true}
+  RunDefaults = {:sequence=>"AASCFCADFSCFCA", :run_file=>"data.txt", :output_file=>nil,:mass_tolerance=>0.3, :Qvalue=>15, :single_disulfide_mode=>false,:disulifde_pattern_analysis=>true,:lower_mz_limit=>200, :output_percent_coverage=>false, :optimizeQ=>false, :help=>false, :sequence_given=>true, :run_file_given=>true}
   class CMDline
     def self.run(argv)
       require 'trollop'
@@ -18,11 +18,9 @@ module DisulfideSearcher
         opt :mass_tolerance, "Mass tolerance for MS/MS matching", type: :float, default: 0.3
         opt :lower_mz_limit, "Lower mass limit for searching", type: :int, default: 200
         opt :output_percent_coverage, "Output the percent coverage of each fragment ion type"
-        opt :optimizeQ, "Optimize for best Q value within Andromeda type algorithm"
-		opt :Qvalue, "sample top q number of peaks from every 100 thompson unit", type: :int, default: 6
-		opt :single_disulfide_mode, "Create theortical spectra assuming single disulifde bond"
-		opt :disulifde_pattern_analysis, "Give score for each pattern of different possible disulifde patterns", default: true 
-        opt :Decoy, "Create 1000 random peptide and give hypergeometric distribution score"
+        opt :Qvalue, "sample top q number of peaks from every 100 thompson unit", type: :int, default: 6
+	opt :single_disulfide_mode, "Create theortical spectra assuming single disulifde bond"
+	opt :disulifde_pattern_analysis, "Give score for each pattern of different possible disulifde patterns", default: true 
 	end
       opts = Trollop::with_standard_exception_handling parser do 
         #raise Trollop::HelpNeeded if argv.empty? # show help if empty
@@ -38,3 +36,4 @@ if $0 == __FILE__
    ARGV
   input = DisulfideSearcher::CMDline.run(ARGV)
 end
+
