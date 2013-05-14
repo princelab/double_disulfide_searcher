@@ -1,5 +1,5 @@
 
-data = File.open("C:/Ruby192/myproject/exp_data/extracted_mzml/DJW_peptide_one_double/DoubleDJW_11aa_peptides01AllCys.mzML682.659.txt")
+data = File.open("somefile.txt")
 data1 = data.read.split("\n")
 p rt = data1[-1].to_f.round(1)
 data1.pop ; p  st_mzs_int = data1.collect {|o| o.split("-")}
