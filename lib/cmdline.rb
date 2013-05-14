@@ -7,7 +7,7 @@ require "command"
 require "tools"
 module DisulfideSearcher
   CMDLineDefaults = "--sequence FCGLCVCPCNK --run-file somefile.txt".split(/ /)
-  RunDefaults = {:sequence=>"AASCFCADFSCFCA", :run_file=>"C:/Ruby192/myproject/exp_data/extracted_mzml/Dependent_specific_ms2.mzML/591.73-77.9.txt", :output_file=>nil,:mass_tolerance=>0.3, :Qvalue=>15, :single_disulfide_mode=>false,:disulifde_pattern_analysis=>true,:lower_mz_limit=>200, :output_percent_coverage=>false, :optimizeQ=>false, :help=>false, :sequence_given=>true, :run_file_given=>true}
+  RunDefaults = {:sequence=>"AASCFCADFSCFCA", :run_file=>"C:/Ruby192/formatteddata.txt", :output_file=>nil,:mass_tolerance=>0.3, :Qvalue=>15, :single_disulfide_mode=>false,:disulifde_pattern_analysis=>true,:lower_mz_limit=>200, :output_percent_coverage=>false, :optimizeQ=>false, :help=>false, :sequence_given=>true, :run_file_given=>true}
   class CMDline
     def self.run(argv)
       require 'trollop'
