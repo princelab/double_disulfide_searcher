@@ -6,7 +6,7 @@ intra-peptide disulfide bonds.It is compatible with single and double disulfide 
 ==Instruction on use
 
 1. Convert RAW file to mzML
-2. Extract target MS/MS spectra from mzML
+2. Extract target MS/MS spectra from mzML file
 3. Excute cmdline.rb
 
 == Note on Patches/Pull Requests
