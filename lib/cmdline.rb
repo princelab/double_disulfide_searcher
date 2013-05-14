@@ -38,30 +38,3 @@ if $0 == __FILE__
    ARGV
   input = DisulfideSearcher::CMDline.run(ARGV)
 end
-#optimum level of data extraction is determined by caculating the common score up to Q= 10
-if input[:optimizeQ] == true
-	array_of_q = (1..10).map do |i|
-	[interface(input[:sequence],input[:mass_tolerance],i,input[:single_disulfide_mode],input[:disulifde_pattern_analysis],input[:lower_mz_limit],input[:output_percent_coverage],input[:run_file]),i]
-	end
-	p array_of_q.sort
-
-elsif input[:Decoy] == true
-
-pool = (0..10).collect do |i|
- input[:sequence].split("").shuffle.join
-end
-pool.delete_if {|d| d == input[:sequence]}
-
-output = pool.map do |e|
- interface(e,input[:mass_tolerance],input[:Qvalue],input[:single_disulfide_mode],input[:disulifde_pattern_analysis],input[:lower_mz_limit],input[:output_percent_coverage],input[:run_file])
-end
-
-#outputfile ==> indicate where you want file to be saved. 
-name = "C:/Ruby192/myproject/decoy/f_decoy#{input[:run_file][-10,10]}.txt"
-File.open(name, "w+") do |f| 
-	  f.puts frequency_analyzer(output.flatten.map {|f| f.round}.sort, name)
-     end
-
-else
- interface(input[:sequence],input[:mass_tolerance],input[:Qvalue],input[:single_disulfide_mode],input[:disulifde_pattern_analysis],input[:lower_mz_limit],input[:output_percent_coverage],input[:run_file])
-end
