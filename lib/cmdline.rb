@@ -17,10 +17,10 @@ module DisulfideSearcher
         opt :output_file, "Output file --suitable automatic name will be used if not specified", type: :string
         opt :mass_tolerance, "Mass tolerance for MS/MS matching", type: :float, default: 0.3
         opt :lower_mz_limit, "Lower mass limit for searching", type: :int, default: 200
-        opt :output_percent_coverage, "Output the percent coverage of each fraggment ion type"
+        opt :output_percent_coverage, "Output the percent coverage of each fragment ion type"
         opt :optimizeQ, "Optimize for best Q value within Andromeda type algorithm"
 		opt :Qvalue, "sample top q number of peaks from every 100 thompson unit", type: :int, default: 6
-		opt :single_disulfide_mode, "When you have more four cysteines but want to analyze peptide with single disulifde bond"
+		opt :single_disulfide_mode, "Create theortical spectra assuming single disulifde bond"
 		opt :disulifde_pattern_analysis, "Give score for each pattern of different possible disulifde patterns", default: true 
         opt :Decoy, "Create 1000 random peptide and give hypergeometric distribution score"
 	end
