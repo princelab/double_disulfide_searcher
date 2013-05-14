@@ -1,10 +1,11 @@
 = Disulfide Searcher
 
-This is a tool which provides a way to search a spectrum and determine which disulfide bridging explains the fragmentation pattern.  
+This is a tool which provides a way to search a spectrum and determine which disulfide bridging explains the fragmentation pattern in
+intra-peptide disulfide bonds.It is compatible with single and double disulfide bonds (2-4 cysteine residues).   
 
 ==Instruction on use
 
-1. Take mzml file
+1. 
 == Note on Patches/Pull Requests
  
 * Fork the project.
